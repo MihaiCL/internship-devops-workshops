@@ -3,20 +3,12 @@ Install 3 nodes with Cassandra
 Steps
 1. Create LXC containers
 2. Check if each container can connect to other containers
-4. Install Cassandra on each container
-5. Setup each node with the proper configurations
+3. Install Cassandra on each container
+4. Setup each node with the proper configurations
+5. Start one node at a time
 
 ```bash
 01-setup-nodes.sh
-```
-
-Install Cassandra 
-
-```bash
-echo "deb http://www.apache.org/dist/cassandra/debian 40x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
-curl https://downloads.apache.org/cassandra/KEYS | sudo apt-key add -
-apt update
-apt install cassandra
 ```
 
 Resources:
