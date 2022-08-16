@@ -1,0 +1,14 @@
+[Unit]
+Description=Kafka
+After=network.target
+
+[Service]
+User=kafka
+WorkingDirectory=/opt/kafka
+Environment="LOG_DIR=/var/log/kafka"
+Environment="KAFKA_HEAP_OPTS=-Xmx512M -Xms512M"
+ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
